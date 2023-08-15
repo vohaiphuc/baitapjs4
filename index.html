@@ -43,22 +43,6 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-6 form-group">
-                <label for="">Ngày Sinh : </label>
-                <input type="date" class="form-control" id="txtNgaySinh" />
-                <span id="spanNgaySinh" class="text-danger"></span>
-              </div>
-              <div class="col-6 form-group">
-                <label for="">Khóa học: </label>
-                <select name="" id="khSV" class="form-control">
-                  <option>Chọn khóa học</option>
-                  <option>KH001</option>
-                  <option>KH002</option>
-                </select>
-                <span id="spanKhoaHoc" class="text-danger"></span>
-              </div>
-            </div>
-            <div class="row">
               <div class="col-4 form-group">
                 <label for="">Điểm toán : </label>
                 <input type="text" class="form-control" id="txtDiemToan" />
@@ -77,14 +61,14 @@
             </div>
 
             <div class="form-group text-center">
-              <button type="button" onclick="" class="btn btn-success">
+              <button type="button" onclick="themSv()" class="btn btn-success">
                 Thêm Sinh Viên
               </button>
 
-              <button type="button" onclick="" class="btn btn-dark">
+              <button type="button" onclick="resetSv()" class="btn btn-dark">
                 Reset
               </button>
-              <button type="button" onclick="" class="btn btn-info">
+              <button type="button" onclick="suaSv()" class="btn btn-info">
                 Cập Nhật
               </button>
             </div>
@@ -96,10 +80,13 @@
                 type="text"
                 class="form-control"
                 id="txtSearch"
+                oninput="timSv()"
               />
             </div>
             <div class="col-3 form-group">
-              <button id="btnSearch" class="btn btn-primary">Search</button>
+              <button id="btnSearch" class="btn btn-primary" onclick="timSv()">
+                Search
+              </button>
             </div>
           </div>
         </div>
@@ -110,10 +97,8 @@
                 <th>Mã Sinh Viên</th>
                 <th>Tên Sinh Viên</th>
                 <th>Email</th>
-                <th>Ngày Sinh</th>
-                <th>Khóa Học</th>
                 <th>Điểm Trung Bình</th>
-                <th></th>
+                <th>Thao tác</th>
               </tr>
             </thead>
             <tbody id="tbodySinhVien"></tbody>
