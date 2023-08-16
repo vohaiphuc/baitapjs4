@@ -1,5 +1,5 @@
 let item = localStorage.getItem("dssv")
-let dssv = (item != "null") ? JSON.parse(item) : []
+let dssv = (item != "null" && item != null) ? JSON.parse(item) : []
 dssv = dssv.map(sv => new SinhVien(...Object.values(sv)));
 render(dssv)
 
@@ -11,7 +11,6 @@ function themSv() {
     saveLocal(dssv)
     clearForm()
     render(dssv)
-
 }
 
 function xoaSv(id) {
